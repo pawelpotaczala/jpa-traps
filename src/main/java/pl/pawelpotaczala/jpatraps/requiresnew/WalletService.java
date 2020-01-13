@@ -1,20 +1,18 @@
-package pl.michalmarciniec.jpatraps.requiresnew;
+package pl.pawelpotaczala.jpatraps.requiresnew;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+@RequiredArgsConstructor
 @Service
 public class WalletService {
 
     private final WalletRepository walletRepository;
+    private final PersonRepository personRepository;
 
-    @Autowired
-    public WalletService(WalletRepository walletRepository) {
-        this.walletRepository = walletRepository;
-    }
-
+    // Spring suspends the current transaction if it exists and then creates a new one
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public Wallet createWallet() {
         Wallet emptyWallet = new Wallet();
