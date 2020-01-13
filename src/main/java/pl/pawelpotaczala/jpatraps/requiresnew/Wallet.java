@@ -1,10 +1,13 @@
-package pl.michalmarciniec.jpatraps.requiresnew;
+package pl.pawelpotaczala.jpatraps.requiresnew;
+
+import lombok.Getter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
+@Getter
 @Entity
 public class Wallet {
 
@@ -16,13 +19,5 @@ public class Wallet {
 
     public Wallet() {
         this.amount = BigDecimal.ZERO;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
     }
 }
