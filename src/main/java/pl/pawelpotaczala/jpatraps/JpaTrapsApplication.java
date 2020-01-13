@@ -1,4 +1,4 @@
-package pl.michalmarciniec.jpatraps;
+package pl.pawelpotaczala.jpatraps;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
